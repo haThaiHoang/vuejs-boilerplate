@@ -1,3 +1,15 @@
 module.exports = {
-  lintOnSave: false
+  lintOnSave: false,
+  css: {
+    loaderOptions: {
+      scss: {
+        additionalData: `
+          @import "@/styles/global";
+        `
+      }
+    }
+  },
+  devServer: {
+    open: true
+  }
 }

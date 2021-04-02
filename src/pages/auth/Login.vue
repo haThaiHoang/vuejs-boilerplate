@@ -1,12 +1,20 @@
 <template>
-  <div>
-    login ne
-  </div>
+  <Container>
+    <h1>login ne</h1>
+    <Input />
+  </Container>
 </template>
 
 <script>
+import Container from '@/components/Container.vue'
+import Input from '@/components/Input.vue'
+
 export default {
-  name: 'Login'
+  name: 'Login',
+  components: {
+    Container,
+    Input
+  }
 }
 </script>
 

@@ -1,5 +1,7 @@
 <template>
-
+  <div>
+    <slot></slot>
+  </div>
 </template>
 
 <script>
@@ -8,7 +10,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 div {
   max-width: 1140px;
   box-sizing: border-box;
@@ -16,19 +18,19 @@ div {
   padding: 0 15px;
   width: 100%;
 
-  ${Media.lessThan(Media.SIZE.XL)} {
+  @include lessThan('XL') {
     max-width: 960px;
   }
 
-  ${Media.lessThan(Media.SIZE.LG)} {
+  @include lessThan('LG') {
     max-width: 720px;
   }
 
-  ${Media.lessThan(Media.SIZE.MD)} {
+  @include lessThan('MD') {
     max-width: 540px;
   }
 
-  ${Media.lessThan(Media.SIZE.SM)} {
+  @include lessThan('SM') {
     max-width: initial;
   }
 }

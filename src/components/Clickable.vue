@@ -10,7 +10,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
   div {
     cursor: pointer;
     user-select: none;
