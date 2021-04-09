@@ -1,23 +1,47 @@
 <template>
   <Container>
-    <h1>login ne</h1>
-    <Input />
+    <Form>
+      <Field name="email" />
+      <ErrorMessage name="email" />
+      <Field name="password" type="password" />
+      <ErrorMessage name="password" />
+      <button>Submit</button>
+    </Form>
   </Container>
 </template>
 
 <script>
-import Container from '@/components/Container.vue'
-import Input from '@/components/Input.vue'
+import { Form, Field, ErrorMessage } from 'vee-validate'
+import * as yup from 'yup'
 
+import Container from '@/components/Container.vue'
+
+console.log(234234, Field)
 export default {
   name: 'Login',
   components: {
     Container,
-    Input
+    Form,
+    Field,
+    ErrorMessage
+  },
+  data() {
+    const schema = yup.object({
+      email: yup.string().required().email(),
+      password: yup.string().required().min(8)
+    })
+
+    return {
+      schema
+    }
+  },
+  methods: {
+    submit() {
+    }
   }
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
 </style>

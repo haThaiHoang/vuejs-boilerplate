@@ -1,27 +1,31 @@
 <template>
-  <div>
+  <div class="clickable" @click="onClick">
     <slot />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Clickable'
+  name: 'Clickable',
+  methods: {
+    onClick() {
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-  div {
-    cursor: pointer;
-    user-select: none;
-    transition: opacity 0.2s;
+.clickable {
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.2s;
 
-    &:hover {
-      opacity: 0.8;
-    }
-
-    &:active {
-      opacity: 0.7;
-    }
+  &:hover {
+    opacity: 0.8;
   }
+
+  &:active {
+    opacity: 0.7;
+  }
+}
 </style>
