@@ -1,6 +1,6 @@
 <template>
   <Container>
-    <Form>
+    <Form @submit="submit" :validation-schema="schema">
       <Field name="email" />
       <ErrorMessage name="email" />
       <Field name="password" type="password" />
@@ -16,7 +16,6 @@ import * as yup from 'yup'
 
 import Container from '@/components/Container.vue'
 
-console.log(234234, Field)
 export default {
   name: 'Login',
   components: {
@@ -36,7 +35,8 @@ export default {
     }
   },
   methods: {
-    submit() {
+    submit(values) {
+      console.log(345, values)
     }
   }
 }
